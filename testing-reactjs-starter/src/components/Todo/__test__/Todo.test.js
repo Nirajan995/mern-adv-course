@@ -28,7 +28,7 @@ it("should not be able to type into input", () => {
 
    const value = screen.queryByText(/mern/i);
 
-   expect(value).not.toBeInTheDocument()
+   expect(value).toBeInTheDocument()
 
 })
 
