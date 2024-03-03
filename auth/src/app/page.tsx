@@ -1,16 +1,14 @@
 "use client";
 
+import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Home() {
-  async function handleClick() {
-    const resp = await fetch("/api/auth/signin");
-  }
-  return (
-    <>
-      {/* <button onClick={handleClick}>Signin</button>
-       */}
-      <Link href={"/api/auth/signin"}>Signin</Link>
-    </>
-  );
+  return <></>;
 }
+
+//npx prisma init
+//npx prisma generate
+//npx prisma db push
+//npx prisma studio
