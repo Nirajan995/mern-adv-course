@@ -1,9 +1,12 @@
 import BlogList from "@/app/components/blogs/BlogList";
+import { getTotalBlogs } from "./services/blogs.service";
 
-export default function Blogs() {
+export default async function Blogs() {
+  const { data } = await getTotalBlogs();
+
   return (
     <>
-      <BlogList />
+      <BlogList blogList={data} />
     </>
   );
 }

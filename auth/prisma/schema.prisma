@@ -17,4 +17,5 @@ model Blog {
   id         String @id @default(auto()) @map("_id") @db.ObjectId
   identifier String @unique
   name       String
+  content    String
 }
