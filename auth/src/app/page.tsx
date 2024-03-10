@@ -1,11 +1,13 @@
 "use client";
 
-import { signOut, useSession } from "next-auth/react";
-import Link from "next/link";
-import { useState } from "react";
+import BlogList from "./components/blogs/BlogList";
 
 export default function Home() {
-  return <></>;
+  return (
+    <>
+      <BlogList />
+    </>
+  );
 }
 
 //npx prisma init
