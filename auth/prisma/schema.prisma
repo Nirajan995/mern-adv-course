@@ -18,4 +18,13 @@ model Blog {
   identifier String @unique
   name       String
   content    String
+
+  BlogLike BlogLike?
+}
+
+model BlogLike {
+  id         String @id @default(auto()) @map("_id") @db.ObjectId
+  identifier String @unique
+  blogId     String @unique @db.ObjectId
+  blog       Blog   @relation(fields: [blogId], references: [id])
 }

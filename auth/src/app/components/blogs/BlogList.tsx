@@ -1,13 +1,22 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { message } from "antd";
+import ScheduleForm from "./ScheduleForm";
 
 const BlogList = ({ blogList }: any) => {
   const [messageApi, contextHolder] = message.useMessage();
+  const [showModal, setShowModal] = useState(false);
   const router = useRouter();
+
+  function scheduleSync(e: any) {
+    setShowModal(true);
+    // const resp = await fetch("/api/blogs/schedule");
+    // const data = await resp.json();
+    // messageApi.success(data.status);
+  }
 
   const syncBlogs = async (e) => {
     try {
@@ -32,6 +41,13 @@ const BlogList = ({ blogList }: any) => {
         onClick={(e) => syncBlogs(e)}
       >
         Sync Blogs
+      </button>
+
+      <button
+        className="bg-gray-500 text-white px-6 py-3 rounder-md shadow-md mb-4 mr-2 float-right"
+        onClick={(e) => scheduleSync(e)}
+      >
+        Schedule Sync
       </button>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 clear-both">
@@ -60,6 +76,11 @@ const BlogList = ({ blogList }: any) => {
           );
         })}
       </div>
+
+      {/* <ScheduleForm   isModalOpen={showModal}
+  handleOk={handleOk},
+  handleCancel={handleCancel},
+  handleSubmit,/> */}
     </div>
   );
 };
