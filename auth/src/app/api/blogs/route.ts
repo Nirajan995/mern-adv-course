@@ -8,7 +8,7 @@ const prisma = new PrismaClient();
 export async function GET(request: NextRequest) {
     // data base operations
     // userAgent.findMany
-    const data = await getBlogs();
+    const data = await getBlogs(1);
 
     return NextResponse.json(data);
 }
