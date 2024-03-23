@@ -45,7 +45,7 @@ const GlobalState = ({ children }) => {
       try {
         const { data } = await axios.get(apiURL);
         dispatch({ type: "FETCH_PRODUCTS", payload: data.products });
-      } catch (error) {
+      } catch (error:any) {
         dispatch({ type: "ERROR", payload: error });
       }
     };

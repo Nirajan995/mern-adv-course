@@ -18,13 +18,13 @@ const BlogList = ({ blogList }: any) => {
     // messageApi.success(data.status);
   }
 
-  const syncBlogs = async (e) => {
+  const syncBlogs = async (e: any) => {
     try {
       const resp = await fetch("/api/blogs/sync");
       const data = await resp.json();
 
       messageApi.success(data.status);
-    } catch (error) {
+    } catch (error: any) {
       console.log(error);
     }
   };
@@ -51,9 +51,9 @@ const BlogList = ({ blogList }: any) => {
       </button>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 clear-both">
-        {blogList.map((blog, index) => {
+        {blogList?.map((blog: any, index: any) => {
           return (
-            <div className="rounder-lg shadow-lg overflow-hidden">
+            <div key={index} className="rounder-lg shadow-lg overflow-hidden">
               <Link href={"#"} target="_blank">
                 <img
                   src={
@@ -66,11 +66,11 @@ const BlogList = ({ blogList }: any) => {
                 />
               </Link>
               <div className="p-4">
-                <h2 className="text-xl">{blog.name}</h2>
+                <h2 className="text-xl">{blog?.name}</h2>
                 <p className="text-gray-400">
                   {blog.author ?? "Nirajan kunwor"}
                 </p>
-                <p className="text-gray-400">{blog.pubDate ?? "11/22"}</p>
+                <p className="text-gray-400">{blog?.pubDate ?? "11/22"}</p>
               </div>
             </div>
           );

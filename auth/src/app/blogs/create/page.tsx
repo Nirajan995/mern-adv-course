@@ -93,7 +93,7 @@ const AddBlogForm: React.FC = () => {
       if (response.status == 200) {
         router.push("/blogs");
       }
-    } catch (error) {
+    } catch (error: any) {
       console.log(error);
       messageApi.error(error);
     }

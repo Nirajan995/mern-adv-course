@@ -18,7 +18,7 @@ export async function POST(request: NextRequest) {
         }
 
         return NextResponse.json(likedBlog);
-    } catch (error) {
+    } catch (error: any) {
         console.log(error)
     }
 

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, DatePicker, FloatButton, Form, Modal, Radio } from "antd";
 
-const ScheduleForm: React.FC = ({
+const ScheduleForm = ({
   isModalOpen,
   handleOk,
   handleCancel,
@@ -10,6 +10,7 @@ const ScheduleForm: React.FC = ({
   isModalOpen: boolean;
   handleOk: any;
   handleCancel: any;
+  handleSubmit: any;
 }) => {
   function onChange() {}
   return (
@@ -20,7 +21,7 @@ const ScheduleForm: React.FC = ({
         onOk={handleOk}
         onCancel={handleCancel}
       >
-        <Form onSubmit={handleSubmit}>
+        <Form>
           <Form.Item label="Form Layout" name="layout">
             <Radio.Group>
               <Radio.Button value="H12">12 Hours</Radio.Button>

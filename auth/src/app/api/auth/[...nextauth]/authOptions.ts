@@ -4,7 +4,7 @@ import clientPromise from "@/app/lib/mongodb";
 import { MongoDBAdapter } from "@auth/mongodb-adapter"
 import GithubProvider from "next-auth/providers/github";
 
-export const authOptions = {
+export const authOptions: any = {
     adapter: MongoDBAdapter(clientPromise),
     providers: [
         GithubProvider({

@@ -5,7 +5,7 @@ import { syncBlogs } from "../(services)/blogs.service";
 
 const prisma = new PrismaClient();
 
-function generateCronString(frequency, hour, minute) {
+function generateCronString(frequency: any, hour: any, minute: any) {
     switch (frequency) {
         case "H12":
             return "* */12 * * *"
@@ -50,7 +50,7 @@ export async function POST(request: NextRequest) {
 
         return NextResponse.json({ status: "success" });
 
-    } catch (error) {
+    } catch (error: any) {
         console.log(error)
     }
 

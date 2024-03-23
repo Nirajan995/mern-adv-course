@@ -8,7 +8,7 @@ function* fetchUsersSaga(action) {
       yield put(fetchUsersRequest());
       const data = yield call(getUsers);
       yield put(fetchUsersSuccess(data.users));
-   } catch (error) {
+   } catch (error: any) {
       yield put(fetchUsersError(error.message))
    }
 }

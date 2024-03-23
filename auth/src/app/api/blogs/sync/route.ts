@@ -12,7 +12,7 @@ export async function GET(request: NextRequest) {
 
         return NextResponse.json({ status: "success" });
 
-    } catch (error) {
+    } catch (error: any) {
         console.log(error)
     }
 

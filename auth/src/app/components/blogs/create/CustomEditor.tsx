@@ -2,7 +2,7 @@
 
 import React from "react";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
-import Editor from "ckeditor5-custom-build";
+// import Editor from "ckeditor5-custom-build";
 
 const editorConfiguration = {
   toolbar: [
@@ -28,15 +28,16 @@ const editorConfiguration = {
 
 function CustomEditor(props: any) {
   return (
-    <CKEditor
-      editor={Editor}
-      config={editorConfiguration}
-      data={props.initialData}
-      onChange={(event, editor) => {
-        const data = editor.getData();
-        props.handleCustomEditor(data);
-      }}
-    />
+    // <CKEditor
+    //   editor={Editor}
+    //   config={editorConfiguration}
+    //   data={props.initialData}
+    //   onChange={(event, editor) => {
+    //     const data = editor.getData();
+    //     props.handleCustomEditor(data);
+    //   }}
+    // />
+    <></>
   );
 }
 

@@ -50,7 +50,7 @@ export async function getBlogs(pageNumber: number) {
             message: "Fetched Blogs",
             data: blogs
         }
-    } catch (error) {
+    } catch (error: any) {
         console.log(error)
     }
 }
@@ -104,7 +104,7 @@ export async function likeBlogs(blogId: string, userId: string) {
 
 
         return { message: existLike ? "Deleted" : "Liked" };
-    } catch (error) {
+    } catch (error: any) {
         console.log(error)
     }
 }
@@ -142,7 +142,7 @@ export async function commentBlogs(blogId: string, userId: string, commentBody: 
         });
 
         return { message: "added comment" };
-    } catch (error) {
+    } catch (error: any) {
         console.log(error)
     }
 }
@@ -179,7 +179,7 @@ export async function commentReplyBlogs(commentid: string, userId: string, comme
         });
 
         return { message: "added comment reply" };
-    } catch (error) {
+    } catch (error: any) {
         console.log(error)
     }
 }
@@ -213,7 +213,7 @@ export async function syncBlogs() {
         }
 
         await Promise.allSettled(promise);
-    } catch (error) {
+    } catch (error: any) {
         console.log(error)
     }
 }
