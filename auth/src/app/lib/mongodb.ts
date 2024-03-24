@@ -1,6 +1,10 @@
 // This approach is taken from https://github.com/vercel/next.js/tree/canary/examples/with-mongodb
 import { MongoClient } from "mongodb"
 
+declare global {
+    var _mongoClientPromise: Promise<MongoClient> | undefined;
+}
+
 if (!process.env.DATABASE_URL) {
     throw new Error('Invalid/Missing environment variable: "MONGODB_URI"')
 }

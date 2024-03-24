@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+  backend:
+    build: ./auth
+    container_name: auth-blog
+    ports:
+      - '3000:3000'
+    env_file:
+      - ./auth/.env
+  frontend:
+    build: ./testing-reactjs-starter
+    container_name: reactjs-blog
+    ports:
+      - '3001:3000'
+  # mongodbserv:
+  #   image: mongo
+  #   container_name: mongoproj
+  #   restart: always
+  #   environment:
+  #     MONGO_INITDB_ROOT_USERNAME: root
+  #     MONGO_INITDB_ROOT_PASSWORD: admin
+  #   ports:
+  #     - 27017:27017
